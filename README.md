@@ -1,6 +1,6 @@
 
 
-![生成笔名Logo-恢复的-3.png](%E7%94%9F%E6%88%90%E7%AC%94%E5%90%8DLogo-%E6%81%A2%E5%A4%8D%E7%9A%84-3.png)
+<img width="459" height="306" alt="Image" src="https://github.com/user-attachments/assets/f60053c5-3880-48c2-99ae-aa2b1ca166f5" />
 
 # 介绍
 
@@ -12,37 +12,37 @@
 
 - 首页
 
-![image.png](image.png)
+![image.png](images/image.png)
 
 - 二手回收
 
-![image.png](image%201.png)
+![image.png](images/image%201.png)
 
 - 个人中心
 
-![image.png](image%202.png)
+![image.png](images/image%202.png)
 
 - 登陆
 
-![image.png](image%203.png)
+![image.png](images/image%203.png)
 
 - 购物车
 
-![image.png](image%204.png)
+![image.png](images/image%204.png)
 
 - 问题反馈
 
-![image.png](image%205.png)
+![image.png](images/image%205.png)
 
 # 架构图
 
 - 应用架构
 
-![image.png](image%206.png)
+![image.png](images/image%206.png)
 
 - 技术架构
 
-![image.png](image%207.png)
+![image.png](images/image%207.png)
 
 # 主要技术栈
 
