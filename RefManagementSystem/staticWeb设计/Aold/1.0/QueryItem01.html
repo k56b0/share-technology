@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用Grid技术进行布局的index2</title>
+    <link href="static/css/Query01.css" rel="stylesheet" type="text/css" />
+    <script src="js/js1.js" type="text/javascript"></script>
+</head>
+<body>
+<!--使用Grid技术进行布局-->
+<div class="wrapper">
+    <div id="head">
+        <p id="title"> RefManagementSystem</p>
+
+    </div>
+
+    <div id="nav">Navigation<br>
+        <ul id="navList">
+            <li><a href="">[HomePage]</a></li>
+            <li><a href="">[QueryItem]</a></li>
+            <li><a href="">[addPage]</a></li>
+            <li><a href="">game</a></li>
+            <li><a href="">book</a></li>
+            <li><a href="">video</a></li>
+            <li><a href="">website</a></li>
+            <li><a href="">programming</a></li>
+            <li><a href="">skill</a></li>
+            <li><a href="">inTheBalance</a></li>
+        </ul>
+
+    </div>
+
+    <div id="main">
+
+        <div id="info">
+<!--            搜索栏目-->
+            <form id="searchForm" action="" method="post" target="_blank">
+                <label style="color: aliceblue">搜索栏</label>
+                <input id="keyword" type="text" name="keyword" value="" size="50" placeholder="如果什么都不输入，则进行全局搜索"/>
+                <select id="SAREA" name="SAREA">
+                    <option value="main">ALL</option>
+                    <option value="game">game</option>
+                    <option value="video">video</option>
+                    <option value="website">website</option>
+                    <option value="programming">programming</option>
+                    <option value="skill">skill</option>
+                </select>
+                <select id="SAREA2" name="SAREA2">
+                    <option value="object">对象</option>
+                    <option value="link">链接</option>
+                </select>
+                <select id="SAREA3" name="SAREA3">
+                    <option value="name" >名称</option>
+                    <option value="category">种类</option>
+                </select>
+                <input id="Submit1" type="submit" value="开始搜索" />
+                <input type="hidden" name="ID" value="57" />
+            </form>
+
+        </div>
+        <div id="left-content">
+          <table>
+              <tr>
+                  <th>名称</th>
+                  <th>类别</th>
+                  <th>删除</th>
+                  <th>修改</th>
+                  <th>增加</th>
+              </tr>
+              <tr>
+                  <td>百年孤独</td>
+                  <td>小说</td>
+                  <td>
+                      <img class="littleIcon" src="static/imgs/del.jpg">
+                  </td>
+                  <td>
+                      <img class="littleIcon" src="static/imgs/update.jpg">
+                  </td>
+                  <td>
+                      <img class="littleIcon" src="static/imgs/add.jpg">
+                  </td>
+              </tr>
+              <tr>
+                  <td>飘</td>
+                  <td>小说</td>
+                  <td>
+                      <img class="littleIcon" src="static/imgs/del.jpg">
+                  </td>
+                  <td>
+                      <img class="littleIcon" src="static/imgs/update.jpg">
+                  </td>
+                  <td>
+                      <img class="littleIcon" src="static/imgs/add.jpg">
+                  </td>
+              </tr>
+
+
+          </table>
+          <div class="paging">
+              <a href="">首页</a>
+              <a href="">上一页</a>
+              <a href="">下一页</a>
+          </div>
+
+        </div>
+        <div id="middle-content">
+            <table>
+                <tr>
+                    <th>名称</th>
+                    <th>链接</th>
+                    <th>对应主题</th>
+                    <th>删除</th>
+                    <th>修改</th>
+                </tr>
+                <tr>
+                    <td>下载资源</td>
+                    <td><a href="">link</a></td>
+                    <td>百年孤独</td>
+                    <td>
+                        <img class="littleIcon" src="static/imgs/del.jpg">
+                    </td>
+                    <td>
+                        <img class="littleIcon" src="static/imgs/update.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>下载资源</td>
+                    <td><a href="">link</a></td>
+                    <td>百年孤独</td>
+                    <td>
+                        <img class="littleIcon" src="static/imgs/del.jpg">
+                    </td>
+                    <td>
+                        <img class="littleIcon" src="static/imgs/update.jpg">
+                    </td>
+
+                </tr>
+
+
+            </table>
+            <div class="paging">
+                <a href="">首页</a>
+                <a href="">上一页</a>
+                <a href="">下一页</a>
+            </div>
+        </div>
+        <div id="right-content">
+<!--            详情表-->
+<!--            根据不同情况，迭代不一样的表-->
+<!--            物品表-->
+           <table id="itemTB">
+               <tr>
+                   <td colspan="2">
+                       主题基本简介
+                   </td>
+
+               </tr>
+               <tr>
+                   <td>
+                      名称
+                   </td>
+                   <td>
+                       百年孤独
+                   </td>
+               </tr>
+               <tr>
+                   <td>
+                       分类
+                   </td>
+                   <td>
+                       小说
+                   </td>
+               </tr>
+               <tr>
+                   <td>
+                       详情简介
+                   </td>
+                   <td>
+                       《百年孤独》是哥伦比亚作家加西亚·马尔克斯于1967年发表的长篇小说，
+                       被誉为拉丁美洲魔幻现实主义文学的代表作。
+                       小说以马孔多小镇为背景，讲述了布恩迪亚家族七代人的兴衰史，
+                       展现了拉丁美洲一个世纪以来的历史变迁。
+                   </td>
+               </tr>
+
+
+           </table>
+            
+
+        </div>
+    </div>
+
+
+    <div id="foot">
+        <P>&copy; 2025 自建网站 FFFOREVER All rights reserved.</P>
+    </div>
+</div>
+
+</body>
+
+</html>

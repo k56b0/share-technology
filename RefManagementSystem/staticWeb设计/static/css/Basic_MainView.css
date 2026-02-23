@@ -1,0 +1,90 @@
+.wrapper #mainContent{
+    /*子布局*/
+    display: grid;
+    grid-template-areas:
+        "info info "
+        "left-content right-content";
+    grid-template-columns: 620px 1fr;
+    grid-template-rows: 50px 4fr; /* 3.各区域 宽高设置 */
+
+}
+/*设置子布局*/
+#mainContent #info {
+    grid-area: info;
+    background-color: indianred;
+}
+#mainContent #left-content{
+    grid-area: left-content;
+    background-color: white;
+}
+
+#mainContent #right-content{
+    grid-area: right-content;
+    background-color: lemonchiffon;
+}
+/* 负责添加的表格设定 */
+.tbl_add{
+    position: relative;
+    top: 100px;
+    left: 60px;
+    border: dimgray solid 1px;
+    /*css设置表格边框合并*/
+    border-collapse: collapse;
+    /*width属性可以分别设置每一列表格的大小*/
+	/* width:90% */
+
+    borderColorDark:#FFFFFF;
+    borderColorLight:#C0C0C0;
+    cellSpacinga:0;
+    bordercolor:#C0C0C0;
+}
+.tbl_add td,.tbl_add th{
+    border: dimgray solid 1px;
+    border-collapse: collapse;
+}
+
+.tbl_show{
+    position: relative;
+    top: 100px;
+    left: 60px;
+    border: dimgray solid 1px;
+    /*css设置表格边框合并*/
+    border-collapse: collapse;
+    /*width属性可以分别设置每一列表格的大小*/
+
+
+    borderColorDark:#FFFFFF;
+    borderColorLight:#C0C0C0;
+    cellSpacinga:0;
+    bordercolor:#C0C0C0;
+}
+/*.col-1 { width: 10%;  }*/
+/*.col-2 { width: 5%;}*/
+/*.col-3 { width:  10%;  }*/
+/*.col-4 { width: 55%; }*/
+/*.col-5 { width:  5%; }*/
+/*.col-7 { width: 5%; }*/
+/*.col-7 { width: 5%; }*/
+/*.col-8 { width: 5%; }*/
+.tbl_show td,.tbl_show th{
+    border: dimgray solid 1px;
+    border-collapse: collapse;
+}
+	
+.custom-select{
+	position: relative;
+	    width: 300px;
+	user-select: none; /* 禁止选中文本 */
+}
+.littleIcon{
+    position: relative;
+    width: 15px;
+    height: 15px;
+
+}
+.paging{
+    position: relative;
+    text-align: left;
+    top: 100px;
+    left: 60px;
+}

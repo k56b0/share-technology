@@ -1,0 +1,200 @@
+.wrapper {
+    display: grid; /* 1.设置 display 为 grid */
+    width: 100%;
+    height: 700px;
+    grid-template-areas:
+        "head head"
+        "nav  main"
+        "nav  foot"; /* 2.区域划分 当前为 三行 两列 */
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: 50px 8fr 0.1fr; /* 3.各区域 宽高设置 */
+
+}
+.wrapper #head {
+    grid-area: head; /* 4. 指定当前元素所在的区域位置，从 grid-template-areas 选取值 */
+    background-color: #8ca0ff;
+    text-align: center;
+    font-family:"黑体";
+    font-size: larger;
+    color: crimson;
+
+}
+.wrapper #head #title{
+     margin: 10px;
+     text-align: center;
+     font-family:"黑体";
+     font-size: larger;
+     color: magenta;
+
+ }
+
+.wrapper #nav{
+    grid-area: nav;
+    background-color: #ffa08c;
+
+
+}
+.wrapper #main{
+    grid-area: main;
+    background-color: #ffff64;
+
+    /*子布局*/
+    display: grid;
+    grid-template-areas:
+        "info info info"
+        "left-content middle-content right-content ";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 4fr; /* 3.各区域 宽高设置 */
+
+}
+.wrapper #foot{
+    grid-area: foot;
+    background-color: #8cffa0;
+}
+
+#img1{
+    /*设置图片大小*/
+    width:300px;
+    height:300px;
+}
+#main #info {
+    grid-area: info;
+    background-color: indianred;
+}
+#main #left-content{
+    grid-area: left-content;
+    background-color: white;
+}
+#main #middle-content{
+    grid-area: middle-content;
+    background-color: powderblue;
+}
+#main #right-content{
+    grid-area: right-content;
+    background-color: lemonchiffon;
+}
+
+#navList{
+    /*去掉列表旁边的小远点*/
+    list-style: none;
+    text-align: left;
+}
+#navList a{
+    /*去掉链接下面的下划线*/
+    text-decoration: none;
+    color:mediumvioletred;
+}
+#navList a:hover{
+    color: bisque;
+}
+.explain1{
+    margin: 10px;
+    text-align: center;
+    font-family:"黑体";
+    font-size: medium;
+    color: dimgray;
+
+}
+.explain2{
+    margin: 70px;
+    text-align: center;
+    font-family:"黑体";
+    font-size: medium;
+    color: dimgray;
+
+}
+#t1{
+    position: relative;
+    left: 90px;
+    top:100px;
+    width: 200px;
+    height: 200px;
+
+}
+
+#foot p{
+    text-align: center;
+    font-family:"黑体";
+    font-size:small;
+    color: dimgray;
+
+}
+
+/*===========================分割线=========================*/
+.littleIcon{
+    position: relative;
+    width: 15px;
+    height: 15px;
+}
+#left-content table,#left-content table td,#left-content table th{
+    border: dimgray solid 1px;
+    /*css设置表格边框合并*/
+    border-collapse: collapse;
+    /*width属性可以分别设置每一列表格的大小*/
+
+}
+#left-content table{
+    position: relative;
+    top: 10px;
+    left: 10px;
+    borderColorDark:#FFFFFF;
+    borderColorLight:#C0C0C0;
+    cellSpacinga:0;
+    bordercolor:#C0C0C0;
+    width:90%;
+    text-align: center;
+
+
+}
+#right-content table{
+    position: relative;
+    top: 10px;
+    left: 70px;
+    borderColorDark:#FFFFFF;
+    borderColorLight:#C0C0C0;
+    cellSpacinga:0;
+    bordercolor:#C0C0C0;
+    width:60%;
+    text-align: center;
+
+
+}
+#right-content table,#right-content table td{
+    border: dimgray solid 1px;
+    /*css设置表格边框合并*/
+    border-collapse: collapse;
+    /*width属性可以分别设置每一列表格的大小*/
+
+}
+#middle-content table,#middle-content table td,#middle-content table th{
+    border: dimgray solid 1px;
+    /*css设置表格边框合并*/
+    border-collapse: collapse;
+    /*width属性可以分别设置每一列表格的大小*/
+
+}
+#middle-content table{
+    position: relative;
+    top: 10px;
+    left: 10px;
+    borderColorDark:#FFFFFF;
+    borderColorLight:#C0C0C0;
+    cellSpacinga:0;
+    bordercolor:#C0C0C0;
+    width:90%;
+    text-align: center;
+
+
+}
+/*鼠标遇到表格行变色*/
+table tr:hover{
+    color: lightcoral;
+}
+.paging{
+    margin: 10px;
+}
+#searchForm{
+    position: relative;
+    top:18px;
+    left: 150px;
+}

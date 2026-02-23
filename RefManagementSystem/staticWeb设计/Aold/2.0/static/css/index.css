@@ -1,0 +1,70 @@
+.wrapper #mainContent{
+    /*子布局*/
+    display: grid;
+    grid-template-areas:
+        "info info info"
+        "left-content middle-content right-content ";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 4fr; /* 3.各区域 宽高设置 */
+
+}
+/*设置子布局*/
+#mainContent #info {
+    grid-area: info;
+    background-color: indianred;
+}
+#mainContent #left-content{
+    grid-area: left-content;
+    background-color: white;
+}
+#mainContent #middle-content{
+    grid-area: middle-content;
+    background-color: powderblue;
+}
+#mainContent #right-content{
+    grid-area: right-content;
+    background-color: lemonchiffon;
+}
+
+#info p{
+    margin: 14px;
+    font-size: medium;
+    color:aquamarine;
+
+}
+#left-content .explain1{
+    margin: 70px;
+    font-size: medium;
+    color: dimgray;
+}
+#middle-content #t1{
+    position: relative;
+    left: 15px;
+    top:100px;
+    width: 200px;
+    height: 200px;
+
+}
+
+#right-content table{
+    position: relative;
+    top: 70px;
+    left: 70px;
+    /*width:60%;*/
+    borderColorDark:#FFFFFF;
+    borderColorLight:#C0C0C0;
+    cellSpacinga:0;
+    bordercolor:#C0C0C0;
+
+
+
+}
+#right-content table,#right-content table td{
+    border: dimgray solid 1px;
+    /*css设置表格边框合并*/
+    border-collapse: collapse;
+    /*width属性可以分别设置每一列表格的大小*/
+    /*不设置会根据内容大小进行填充*/
+    width:70%;
+}
+

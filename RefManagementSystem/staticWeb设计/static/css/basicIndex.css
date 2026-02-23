@@ -1,0 +1,44 @@
+#img1{
+    /*设置图片大小*/
+    width:300px;
+    height:300px;
+}
+.wrapper #head #mainTitle{
+    margin: 10px;
+    font-size: larger;
+    color: magenta;
+}
+.wrapper #nav #navList{
+    /*去掉列表旁边的小远点*/
+    list-style: none;
+    text-align: left;
+}
+.wrapper #nav #navList a{
+    /*去掉链接下面的下划线*/
+    text-decoration: none;
+    color:mediumvioletred;
+}
+.wrapper #nav #navList a:hover{
+    color: bisque;
+}
+.wrapper #foot p{
+    font-size:small;
+    color: dimgray;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

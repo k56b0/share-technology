@@ -1,0 +1,16 @@
+div{
+    /*设置盒子外边距*/
+    margin: 0px;
+}
+/*统一表格鼠标变色*/
+table tr:hover{
+    color: lightcoral;
+}
+body{
+    /*确定前端页面显示的字体*/
+    /*一定要按照这个顺序写。前面的英文字体无法渲染中文，所以会留下中文给后面的字体渲染，
+    /*华文新魏一类的字体能渲染中英文，所以不能放在第一顺位*/
+    font-family: "Times New Roman","华文新魏" ;
+    /*文字对齐模式：居中*/
+    text-align: center
+}

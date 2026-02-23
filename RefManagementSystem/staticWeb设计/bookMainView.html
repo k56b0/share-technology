@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>书籍主视图-bookMainView</title>
+    <!--    基本配置-->
+    <link href="static/css/basic.css" rel="stylesheet" type="text/css" />
+    <link href="static/css/basicSkeleton.css" rel="stylesheet" type="text/css" />
+    <link href="static/css/basicIndex.css" rel="stylesheet" type="text/css" />
+    <!--    特有配置-->
+    <link href="static/css/Basic_MainView.css" rel="stylesheet" type="text/css" />
+	
+	<script src="js/vue.js"></script>
+	<script src="js/axios.min.js"></script>
+
+
+
+</head>
+<body>
+<!--使用Grid技术进行布局-->
+<div class="wrapper">
+    <div id="head">
+        <p id="mainTitle"> RefManagementSystem</p>
+    </div>
+    <div id="nav"><br>
+        <ul id="navList">
+          <li><a href="index.html">[网站首页]</a></li>
+          <li><a href="bookMainView.html">[书籍视图]</a></li>
+          <li><a href="addLinkPage.html">[增加链接]</a></li>
+          <li><a href="updateCategoryPage.html">[更新类型]</a></li>
+          <li><a href="">game</a></li>
+          <li><a href="">book</a></li>
+          <li><a href="">video</a></li>
+          <li><a href="">website</a></li>
+          <li><a href="">programming</a></li>
+          <li><a href="">skill</a></li>
+        </ul>
+
+    </div>
+
+    <div id="mainContent">
+        <div id="info">
+            <p >同一个时代出生，感谢!!</p>
+        </div>
+        <div id="left-content">
+<!--    放一个专门用于添加的表单-->
+
+            <form action="/" method="post" id="addBookForm" >
+			
+                <table class="tbl_add">
+					<tr>
+						<!-- 下面两种方式效果一样 -->
+						<!-- <th class="tbl_th"  v-text="table_tit" colspan="2">{{table_tit}}</th> -->
+						<th class="tbl_th"  v-bind:text="table_tit" colspan="2">{{table_tit}}</th>
+						
+					</tr>
+                    <tr>
+                        <th class="tbl_th">书名</th>
+                        <td>
+                            <input size="57px" v-model.trim="name" id="tbl_text" type="text" name="" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="tbl_th">类型</th>
+                        <td>
+                            <select  v-model="category" class="custom-select" name="category">
+								<option disabled value="">请选择书籍类型</option>
+								<option value="A">A马克思主义、列宁主义、毛泽东思想、邓小平理论</option>
+								<option value="B">B哲学、宗教</option>
+								<option value="C">C社会科学总论</option>
+								<option value="D">D政治、法律</option>
+								<option value="E">E军事</option>
+								<option value="F">F经济</option>
+								<option value="G">G文化、科学、教育、体育</option>
+								<option value="H">H语言、文字</option>
+								<option value="I" >I文学</option>
+								<option value="J">J艺术</option>
+								<option value="K">K历史、地理</option>
+								<option value="N">N自然科学总论</option>
+								<option value="O">O数理科学和化学</option>
+								<option value="P">P天文学、地球科学</option>
+								<option value="Q">Q生物科学</option>
+								<option value="R">R医药、卫生</option>
+								<option value="S">S农业科学</option>
+								<option value="T">T工业技术</option>
+								<option value="U">U交通运输</option>
+								<option value="V">V航空、航天</option>
+								<option value="X">X环境科学、安全科学</option>
+								<option value="Z">Z综合性图书</option>
+                            </select>
+							<span>Selected: {{ category }}</span>
+                        </td>
+                    </tr>
+					<tr>
+						<th class="tbl_th">自由标签</th>
+						<td>
+						    <input size="57px" v-model.trim="label" type="text" name=""  placeholder="文本格式:标签1=标签2"/>
+						</td>
+					</tr>
+                    <tr>
+                        <th class="tbl_th">备注概括</th>
+                        <td>
+                            <textarea v-model.trim="generalise" name="generalise" rows="10" cols="60"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="tbl_th">作者</th>
+                        <td><input v-model.trim="author" size="57px" type="text" name=""  placeholder="选填"/></td>
+                    </tr>
+                    <tr>
+                        <th class="tbl_th">年份</th>
+                        <td><input v-model.trim="year" size="57px" type="text" name=""  placeholder="选填"/></td>
+                    </tr>
+                    <tr><!-- 单选按钮 -->
+                        <th class="tbl_th">是否读过</th>
+                        <td><label >读过</label>
+                            <input v-model.trim="isRead" type="radio" value="是" checked  >
+                            <label >没读过</label>
+                            <input v-model.trim="isRead" type="radio" value="否" >
+							结果：{{isRead}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">
+                            <input type="submit" value="添加"  />
+                        </th>
+                    </tr>
+                </table>
+			
+            </form>
+        </div>
+        <div id="right-content">
+<!--            一个专门用来展示，点击进入详细信息，删除，跳转添加，修改的表格-->
+            <table class="tbl_show" id="showBookTable">
+<!--                <colgroup>-->
+<!--                    <col class="col-1">-->
+<!--                    <col class="col-2">-->
+<!--                    <col class="col-3">-->
+<!--                    <col class="col-4">-->
+<!--                    <col class="col-5">-->
+<!--                    <col class="col-6">-->
+<!--                    <col class="col-7">-->
+<!--                    <col class="col-8">-->
+<!--                </colgroup>-->
+                <tr>
+                    <th>名称</th>
+                    <th>类别</th>
+                    <th>年份</th>
+                    <th>作者</th>
+                    <th>是否读过</th>
+                    <th>备注概括</th>
+                    <th colspan="3">操作</th>
+                </tr>
+                <tr>
+                    <td>魔山</td>
+                    <td>novel</td>
+                    <td>1924</td>
+                    <td>托马斯.曼</td>
+                    <td>否</td>
+                    <td>现代小说</td>
+                    <td>
+                        <img class="littleIcon" v-on:click="confirmDEl" src="static/img/del.jpg">
+                    </td>
+                    <td>
+                        <img class="littleIcon" src="static/img/update.jpg">
+                    </td>
+                    <td>
+                        <img class="littleIcon" src="static/img/add.jpg">
+                    </td>
+                </tr>
+                <tr>
+                    <td>人类为什么要探索太空</td>
+                    <td>science</td>
+                    <td>2019</td>
+                    <td>克里斯.英庇</td>
+                    <td>是</td>
+                    <td>太空情书
+                    </td>
+                    <td>
+                        <img class="littleIcon" v-on:click="confirmDEl"  src="static/img/del.jpg">
+                    </td>
+                    <td>
+                        <img class="littleIcon" src="static/img/update.jpg">
+                    </td>
+                    <td>
+                        <img class="littleIcon"  src="static/img/add.jpg">
+                    </td>
+                </tr>
+
+
+            </table>
+            <div class="paging">
+                <a href="">首页</a>
+                <a href="">上一页</a>
+                <a href="">下一页</a>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+
+    <div id="foot">
+        <P>&copy; 2025 自建网站 FFFOREVER All rights reserved.</P>
+    </div>
+</div>
+<!-- <script type="text/javascript">	
+	var addBookFormvue = new Vue({
+	        el: '#addBookForm',
+	        data: {
+	            name:"Hello Vue",
+				category: "",
+				label: "",
+				generalise: "Hello Vue",
+				author: "Hello Vue",
+				year: "Hello Vue",
+				isRead: ""
+	        }
+	    });
+</script> -->
+
+
+
+
+</body>
+<!-- 一定要放在定义的盒子后面 -->
+<script src="js/basic.js"></script>
+
+
+</html>

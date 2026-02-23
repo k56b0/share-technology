@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bookControl</title>
+    <!--    基本配置-->
+    <link href="static/css/basic.css" rel="stylesheet" type="text/css" />
+    <link href="static/css/basicSkeleton.css" rel="stylesheet" type="text/css" />
+    <link href="static/css/basicIndex.css" rel="stylesheet" type="text/css" />
+    <!--    特有配置-->
+    <link href="static/css/controlBasic.css" rel="stylesheet" type="text/css" />
+
+    <script src="js/basic.js"></script>
+
+</head>
+<body>
+<!--使用Grid技术进行布局-->
+<div class="wrapper">
+    <div id="head">
+        <p id="mainTitle"> RefManagementSystem</p>
+    </div>
+    <div id="nav"><br>
+        <ul id="navList">
+            <li><a href="index.html">[网站首页]</a></li>
+            <li><a href="QueryItem.html">[集成查询]</a></li>
+            <li><a href="addLinkPage.html">[增加链接]</a></li>
+            <li><a href="updateCategoryPage.html">[更新类型]</a></li>
+            <li><a href="">game</a></li>
+            <li><a href="">book</a></li>
+            <li><a href="">video</a></li>
+            <li><a href="">website</a></li>
+            <li><a href="">programming</a></li>
+            <li><a href="">skill</a></li>
+            <li><a href="showAndadd_Test01.html">Test01</a></li>
+            <li><a href="showAndadd_Test02.html">Test02</a></li>
+        </ul>
+
+    </div>
+
+    <div id="mainContent">
+        <div id="info">
+            <p >同一个时代出生，感谢!!</p>
+        </div>
+        <div id="left-content">
+<!--    放一个专门用于添加的表单-->
+            <form action="/" method="post">
+                <table class="tbl_add">
+                    <tr>
+                        <th class="tbl_th">书名</th>
+                        <td>
+                            <input size="57px" id="tbl_text" type="text" name="" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="tbl_th">类型</th>
+                        <td>
+                            <select  id="category" name="">
+                                <option value="novel">novel</option>
+                                <option value="science">science</option>
+                                <option value="history">history</option>
+                                <option value="philosophy"> philosophy</option>
+                                <option value="poetry"> poetry</option>
+                                <option value="biography">biography</option>
+                                <option value="script"> script</option>
+
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="tbl_th">备注概括</th>
+                        <td>
+                            <textarea  name="generalise" rows="10" cols="60"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="tbl_th">作者</th>
+                        <td><input size="57px" type="text" name=""  placeholder="选填"/></td>
+                    </tr>
+                    <tr>
+                        <th class="tbl_th">年份</th>
+                        <td><input size="57px" type="text" name=""  placeholder="选填"/></td>
+                    </tr>
+                    <tr><!-- 单选按钮 -->
+                        <th class="tbl_th">是否读过</th>
+                        <td><label >读过</label>
+                            <input type="radio" value="是" checked name="" >
+                            <label >没读过</label>
+                            <input type="radio" value="否" name="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">
+                            <input type="submit" value="添加"  />
+                        </th>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div id="right-content">
+<!--            一个专门用来展示，点击进入详细信息，删除，跳转添加，修改的表格-->
+            <table class="tbl_show">
+                <tr>
+                    <th>名称</th>
+                    <th>类别</th>
+                    <th>年份</th>
+                    <th>作者</th>
+                    <th>是否读过</th>
+                    <th>备注概括</th>
+                    <th colspan="3">操作</th>
+                </tr>
+                <tr>
+                    <td>魔山</td>
+                    <td>novel</td>
+                    <td>1924</td>
+                    <td>托马斯.曼</td>
+                    <td>否</td>
+                    <td>现代小说</td>
+                    <td>
+                        <img class="littleIcon" onclick="confirmDEl(this)" src="static/img/del.jpg">
+                    </td>
+                    <td>
+                        <img class="littleIcon" src="static/img/update.jpg">
+                    </td>
+                    <td>
+                        <img class="littleIcon" src="static/img/add.jpg">
+                    </td>
+                </tr>
+                <tr>
+                    <td>人类为什么要探索太空</td>
+                    <td>science</td>
+                    <td>2019</td>
+                    <td>克里斯.英庇</td>
+                    <td>是</td>
+                    <td>太空情书
+                    </td>
+                    <td>
+                        <img class="littleIcon" onclick="confirmDEl(this)"  src="static/img/del.jpg">
+                    </td>
+                    <td>
+                        <img class="littleIcon" src="static/img/update.jpg">
+                    </td>
+                    <td>
+                        <img class="littleIcon"  src="static/img/add.jpg">
+                    </td>
+                </tr>
+
+
+            </table>
+            <div class="paging">
+                <a href="">首页</a>
+                <a href="">上一页</a>
+                <a href="">下一页</a>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+
+    <div id="foot">
+        <P>&copy; 2025 自建网站 FFFOREVER All rights reserved.</P>
+    </div>
+</div>
+</body>
+
+</html>
