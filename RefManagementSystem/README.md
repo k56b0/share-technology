@@ -1,8 +1,6 @@
 
 
-```bash
 <img width="459" height="306" alt="Image" src="https://github.com/user-attachments/assets/f60053c5-3880-48c2-99ae-aa2b1ca166f5" />
-```
 
 # 简介
 
