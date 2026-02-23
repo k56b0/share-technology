@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.aerial.toys.mapper.orderMapper">
+
+    <resultMap id="OrderUserMap" type="order">
+        <id property="orderId" column="order_id"></id>
+        <result property="goodsCount" column="goods_count"></result>
+        <association property="belongUser" javaType="user">
+            <id property="userId" column="user_id"></id>
+            <result property="userName" column="user_name"></result>
+            <result property="password" column="password"></result>
+            <result property="age" column="age"></result>
+            <result property="sex" column="sex"></result>
+            <result property="email" column="email"></result>
+            <result property="UserGroup" column="User_Group"></result>
+        </association>
+    </resultMap>
+
+    <select id="getAllOrder" resultMap="OrderUserMap">
+        SELECT `order`.*,us.*
+        FROM `user` us LEFT JOIN orderbean `order`
+                                 ON belong_user = user_name
+
+    </select>
+
+    <insert id="addOrder">
+        INSERT INTO `orderbean` VALUES (NULL,
+                                    (SELECT COUNT(*) FROM ordercar),
+                                    (SELECT user_name FROM `user` WHERE user_id =#{idi}))
+    </insert>
+
+
+
+
+</mapper>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/static/css/style.css}" />
+<!--    <link type="text/css" rel="stylesheet" href="../static/css/style.css" />-->
+</head>
+<body>
+<div class="title">欢迎来到首页，请选择你想去的服务页面</div>
+<table id="panel">
+    <tr>
+        <td colspan="2">选择面板</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td><a th:href="@{/goods/user}">查看用户信息</a></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td><a th:href="@{/goods/show}">展示商品列表</a></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td><a th:href="@{/goods/car}">查看购物车</a></td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td><a th:href="@{/goods/order}">查看订单</a></td>
+    </tr>
+</table>
+</body>
+</html>

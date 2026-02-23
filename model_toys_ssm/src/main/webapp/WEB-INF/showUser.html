@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>showUser</title>
+        <link type="text/css" rel="stylesheet" th:href="@{/static/css/style.css}" />
+<!--    <link type="text/css" rel="stylesheet" href="../static/css/style.css" />-->
+</head>
+<body>
+
+<table  id="userMsg" >
+
+    <tr>
+        <th colspan="2">用户信息</th>
+    </tr>
+    <tr >
+        <td >昵称</td><td th:text="${session.uuser.userName}">风灵</td>
+    </tr>
+    <tr >
+        <td >年龄</td><td th:text="${session.uuser.age}">18</td>
+    </tr>
+    <tr >
+        <td>性别</td><td th:text="${session.uuser.sex}">女</td>
+    </tr>
+    <tr >
+        <td>邮箱</td><td th:text="${session.uuser.email}">女</td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <a th:href="@{/goods/user/updata}">修改信息</a>
+        </td>
+    </tr>
+</table>
+<!--            <a th:href="@{'/goods/user/updata/'+${session.uuser.userId}}">修改信息</a>-->
+</body>
+</html>

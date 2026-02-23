@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.aerial.toys.mapper.auserMapper">
+
+    <!--  查找所有信息  List<user> getAllUser();-->
+    <select id="getAllUser" resultType="user">
+        SELECT * FROM `user`
+    </select>
+
+    <!--  验证用户  user checkUser(@Param("name") String name, @Param("password") String password);-->
+    <select id="checkUser" resultType="user">
+        SELECT * FROM `user` WHERE user_name = #{name} AND `password` =#{password}
+    </select>
+
+    <!--  根据用户名获得用户信息  user getUserByName(@Param("name") String name);-->
+    <select id="getUserByName" resultType="user">
+        SELECT * FROM user WHERE user_name = #{name}
+    </select>
+
+    <!--  根据id获得用户信息  user getUserById(@Param("id") Integer id);-->
+    <select id="getUserById" resultType="user">
+        SELECT * FROM `user` WHERE user_id =#{id};
+    </select>
+
+    <!--   修改用户信息  int upDataUser(user u);-->
+    <!--    `password` 一定要加``-->
+    <update id="upDateUser" >
+        update user set user_name = #{userName},age=#{age},sex=#{sex},email=#{email}  where user_id = #{userId}
+    </update>
+
+
+</mapper>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Toys_list</title>
+        <link type="text/css" rel="stylesheet" th:href="@{/static/css/style.css}" />
+<!--    <link type="text/css" rel="stylesheet" href="../static/css/style.css" />-->
+    <script type="text/javascript" th:src="@{/static/js/vue.js}"></script>
+
+</head>
+<body>
+<div>
+    <table  id="ListGood">
+        <tr>
+            <th colspan="6">可购物列表</th>
+        </tr>
+        <tr>
+            <th>商品编号</th>
+            <th>商品名</th>
+            <th>单价</th>
+            <th>库存</th>
+            <th>选项</th>
+
+        </tr>
+        <tr th:each=" goods: ${Goods}">
+            <td th:text="${goods.ModelToyId}">1</td>
+            <td th:text="${goods.goodsName}">风灵</td>
+            <td th:text="${goods.price}">100</td>
+            <td th:text="${goods.inventory}">100</td>
+            <td>
+                <a  @click="addGood"  th:href="@{'/goods/car/'+${goods.ModelToyId}}"> {{msg3}}</a>
+<!--                通过这个链接提交一个删除表单,href给表单提供路径-->
+<!--                <a th:href="@{'goods/toChange/'+${goods.ModelToyId}}">{{msg4}}</a>-->
+<!--                <a class="deleteA" @click="deleteGood"-->
+<!--                   th:href="@{'/goods/'+${goods.ModelToyId}}">{{ msg2 }}</a>-->
+<!--                ${goods.ModelToyId}-->
+
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+<!-- 作用：通过超链接控制表单的提交，将post请求转换为delete请求 -->
+<form id="add_form" method="post">
+    <!-- HiddenHttpMethodFilter要求：必须传输_method请求参数，并且值为最终的请求方式 -->
+<!--    <input type="hidden" name="_method" value="delete"/>-->
+</form>
+<script type="text/javascript">
+    var vue = new Vue({
+        el:"#ListGood",
+        data:{
+            msg1:'购入',
+            msg2:'删除',
+            msg3:'添加到购物车',
+            msg4:'更新'
+        },
+        methods:{
+            //event表示当前事件
+            addGood:function (event) {
+                //通过id获取表单标签
+                var add_form = document.getElementById("add_form");
+                //将触发事件的超链接的href属性为表单的action属性赋值
+                add_form.action = event.target.href;
+                //提交表单
+                add_form.submit();
+                //阻止超链接的默认跳转行为
+                event.preventDefault();
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

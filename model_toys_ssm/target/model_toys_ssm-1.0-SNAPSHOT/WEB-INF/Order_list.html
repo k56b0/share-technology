@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Order_list</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/static/css/style.css}" />
+</head>
+<body>
+
+<table  id="ListGood">
+    <tr>
+        <th colspan="2">订单列表</th>
+    </tr>
+    <tr>
+        <th>订单号</th>
+        <th>成交商品数</th>
+
+    </tr>
+    <tr th:each=" order: ${allOrder}">
+        <td th:text="${order.orderId}">1</td>
+        <td th:text="${order.goodsCount}">10</td>
+    </tr>
+</table>
+
+</body>
+</html>

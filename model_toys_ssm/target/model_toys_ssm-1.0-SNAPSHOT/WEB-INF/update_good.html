@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>update</title>
+    <!--    <link type="text/css" rel="stylesheet" th:href="@{/static/css/style.css}" />-->
+    <link type="text/css" rel="stylesheet" href="../static/css/style.css" />
+</head>
+<body>
+<div>
+  <form th:action="@{/goods}" method="post">
+    <input type="hidden" name="_method" value="put">
+    <input type="hidden" name="ModelToyId" th:value="${g.ModelToyId}">
+    商品名：<input type="text" name="goodsName" th:value="${g.goodsName}">   <br>
+    单价：<input type="text" name="price" th:value="${g.price}">   <br>
+    库存：<input type="text" name="inventory" th:value="${g.inventory}">   <br>
+      <input type="submit" value="update">
+  </form>
+</div>
+</body>
+</html>

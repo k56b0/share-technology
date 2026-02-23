@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>aerial模型玩具商城</title>
+        <link type="text/css" rel="stylesheet" th:href="@{/static/css/style.css}" />
+</head>
+
+<body>
+
+<div class="login_banner">
+    <div id="content">
+        <div class="login_form">
+            <div class="login_box">
+
+                <div class="tit">
+                    <h1>用户登录</h1>
+                </div>
+                <div class="form">
+                    <form  th:action="@{/check}"  method="get">
+<!--                        <input type="hidden" name="operate" value="login"/>-->
+                        <label>用户名称：</label>
+                        <input class="itxt" type="text" placeholder="请输入用户名"
+                               name="uname" id="username" value="小王" />
+                        <br />
+                        <br />
+                        <label>用户密码：</label>
+                        <input class="itxt" type="password" placeholder="请输入密码"
+                               name="pwd" id="password" value="123456"/>
+                        <br />
+                        <input type="submit" value="登录" id="sub_btn" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="bottom">
+      <span>
+        aerial模型玩具商城.Copyright &copy;2023
+      </span>
+</div>
+</body>
+</html>

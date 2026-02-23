@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>add_good</title>
+    <!--    <link type="text/css" rel="stylesheet" th:href="@{/static/css/style.css}" />-->
+    <link type="text/css" rel="stylesheet" href="../static/css/style.css" />
+</head>
+<body>
+<div>
+<form th:action="@{/goods}" method="post">
+  goodsName:<input type="text" name="goodsName"><br>
+  price:<input type="text" name="price"><br>
+  inventory:<input type="text" name="inventory"><br>
+<!--  gender:<input type="radio" name="gender" value="1">male-->
+<!--  <input type="radio" name="gender" value="0">female-->
+<!--  <br> -->
+  <input type="submit" value="add">
+</form>
+</div>
+</body>
+</html>

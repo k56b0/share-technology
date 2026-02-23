@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.aerial.toys.mapper.carMapper">
+
+    <!--    List<car> getAllCar();-->
+    <select id="getAllCar" resultType="car">
+        SELECT * FROM `ordercar`
+    </select>
+<!--    int addToCar(ModelToy m);-->
+    <insert id="addToCar">
+        insert into `ordercar` values (null,#{goodsName},#{price});
+    </insert>
+
+    <!--    int delete(@Param("idi") Integer id);-->
+    <delete id="delete">
+        delete from  ordercar where car_id = #{idi}
+    </delete>
+
+    <!--    int deleteAll();-->
+    <delete id="deleteAll">
+        delete from  ordercar
+    </delete>
+</mapper>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>可购物列表</title>
+    <link rel="stylesheet"  href="../static/css/style.css">
+</head>
+<body>
+<div>
+    <table >
+        <tr>
+            <th colspan="6">可购物列表</th>
+        </tr>
+        <tr>
+            <th>商品编号</th>
+            <th>商品名</th>
+            <th>单价</th>
+            <th>库存</th>
+            <th>选项</th>
+
+        </tr>
+        <tr th:each="goods : ${Goods}">
+            <td th:text="${goods.ModelToy_id}">1</td>
+            <td th:text="${goods.egoods_name}">风灵</td>
+            <td th:text="${goods.price}">100</td>
+            <td th:text="${goods.inventory}">100</td>
+            <td>
+                <a href="">购入</a>
+            </td>
+        </tr>
+
+<!--        <tr >-->
+<!--            <td th:text="${status.count}">2</td>-->
+<!--            <td th:text="${employee.empName}">铁骑</td>-->
+<!--            <td th:text="${employee.age}">80</td>-->
+<!--            <td th:text="${employee.gender}">10</td>-->
+<!--            <td>-->
+<!--                <a href="">购入</a>-->
+<!--            </td>-->
+<!--        </tr>-->
+    </table>
+</div>
+
+
+</body>
+</html>

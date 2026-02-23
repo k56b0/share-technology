@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link type="text/css" rel="stylesheet" href="../static/css/index.css" />
+</head>
+<body>
+<div class="title">欢迎来到首页，请选择你想去的服务页面</div>
+<table id="panel">
+    <tr>
+        <td colspan="2">选择面板</td>
+    </tr>
+    <tr>
+        <td>1</td>
+<!--        <td><a href="ModulToys_list.html">展示商品列表</a></td>-->
+        <td><a th:href="@{/goods/show}">展示商品列表</a></td>
+    </tr>
+</table>
+<!--    <a th:href="@{/employee/page/1}">测试1</a>-->
+</body>
+</html>

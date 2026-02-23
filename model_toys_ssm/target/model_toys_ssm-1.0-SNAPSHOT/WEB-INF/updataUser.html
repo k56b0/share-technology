@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>updataUser</title>
+        <link type="text/css" rel="stylesheet" th:href="@{/static/css/style.css}" />
+
+</head>
+<body>
+
+<div>
+<form  id="updataUser" th:action="@{/goods/user}" method="post">
+    <input type="hidden" name="_method" value="put">
+    <input type="hidden" name="userId" th:value="${session.uuser.userId}" >
+    <input type="hidden" name="password" th:value="${session.uuser.password}" >
+    昵称：<input type="text" name="userName" >   <br>
+    年龄：<input type="text" name="age" >   <br>
+    性别：<input type="text" name="sex" >   <br>
+    邮箱：<input type="text" name="email" >   <br>
+    <input type="submit" value="update">
+</form>
+</div>
+
+</body>
+</html>

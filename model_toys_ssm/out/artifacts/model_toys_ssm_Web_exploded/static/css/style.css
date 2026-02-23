@@ -1,0 +1,27 @@
+﻿/*@charset "UTF-8";*/
+* {
+  margin: 0;
+  font-family: 'Microsoft Yahei';
+  /* color: #666; */
+}
+body {
+  /*设置背景*/
+  background: url(../img/body1.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+div {
+  /*1、想要盒子居中*/
+  text-align: center;
+  margin: 0px auto;
+
+}
+
+table{
+  /*1、想要表格居中*/
+  margin: 0px auto;
+}
+
+
+
+
